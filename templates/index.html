@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+<body>
+<div class="container1">
+    <div class ="titles">
+      <h1>APULIASOFT</h1>
+    </div>
+</div>
+
+<div class="container">
+  <div class="heading">
+      Employee Activity Registration Form
+  </div>
+  
+    <div class="card-details">
+        <form action="" method="POST" enctype="multipart/form-data">
+
+      <div class="card-box">
+        <label for="name">Project</label>
+        <input class="input" type="text" name="project" id="project" required>
+      </div>
+
+      <div class="card-box">
+        <label for="name">Employee</label>
+        <input type="text" name="employee" id="name" required>
+    </div>
+
+
+      <div class="card-box">
+        <label for="date">Date</label>
+        <input type="datetime-local" name="date" id="date">
+      </div>
+      <div class="card-box">
+        <label for="name">Hours</label>
+        <input type="text" name="hours" id="hour">
+      </div>
+      <button class="button" name="submit_button" value="first_sub" type="submit">Submit</button>
+    </form>
+    </div>
+</div>
+<div class="checkbox">
+  <form class="secondform" method="POST" action="/">
+      <input type="checkbox" class="checkoption" value="0" name="mycheck">Without Agg. 
+      <input type="checkbox" class="checkoption" value="1" name="mycheck">Project-Agg. 
+      <input type="checkbox" class="checkoption" value="2" name="mycheck">project & Employee Agg.
+      <input type="checkbox" class="checkoption" value="3" name="mycheck">Employee-agg.
+      <button class="button2" class="checkoption" name="submit_button" value="second_sub" type="submit">Submit</button>
+  </form>
+</div>
+ <!-- Script -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script type="text/javascript">
+   $(document).ready(function(){
+
+      $('.checkoption').click(function() {
+         $('.checkoption').not(this).prop('checked', false);
+      });
+   });
+   </script>
+
+</body>
+</html>
